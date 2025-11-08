@@ -7,11 +7,7 @@
   <meta name="description" content="FANCY · VIP｜华世智鑫：珠宝、香经、EX、文馨与关于。东方极简与智能文明美学门户。">
   <style>
     :root{
-      --bg:#0c0c0c;      /* 背景 */
-      --fg:#f2f2f2;      /* 正文 */
-      --muted:#bfbfbf;   /* 次级 */
-      --line:#2a2a2a;    /* 细线 */
-      --accent:#d8c693;  /* 低饱和金色，用于hover */
+      --bg:#0c0c0c; --fg:#f2f2f2; --muted:#bfbfbf; --line:#2a2a2a; --accent:#d8c693;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -23,46 +19,24 @@
     }
     .wrap{ width:min(1100px,92vw); padding:6vh 0 7vh; }
 
-    /* 顶部两枚LOGO */
     .hero{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:min(8vw,80px);
-      align-items:center; justify-items:center;
-      margin:4vh 0 5vh;
+      display:grid; grid-template-columns:1fr 1fr; gap:min(8vw,80px);
+      align-items:center; justify-items:center; margin:4vh 0 5vh;
     }
     .hero a{ display:inline-block; }
     .hero img{
       width:min(300px,40vw); height:auto;
-      filter:
-        drop-shadow(0 0 10px rgba(255,255,255,.45))
-        drop-shadow(0 0 22px rgba(255,255,255,.25));
+      filter: drop-shadow(0 0 10px rgba(255,255,255,.45)) drop-shadow(0 0 22px rgba(255,255,255,.25));
       transition: transform .25s ease, filter .25s ease;
     }
     .hero a:hover img{
       transform: translateY(-4px) scale(1.02);
-      filter:
-        drop-shadow(0 0 14px rgba(255,255,255,.65))
-        drop-shadow(0 0 28px rgba(255,255,255,.35));
+      filter: drop-shadow(0 0 14px rgba(255,255,255,.65)) drop-shadow(0 0 28px rgba(255,255,255,.35));
     }
 
-    /* 主标题与副标题 */
-    h1{
-      text-align:center; margin:4px 0 8px;
-      font-size:clamp(28px,5.2vw,46px);
-      letter-spacing:.18em; font-weight:600;
-    }
-    .subtitle{
-      text-align:center; color:var(--muted);
-      letter-spacing:.24em; font-size:clamp(12px,2.6vw,16px);
-      margin-bottom:20px;
-    }
-
-    /* 分隔线＋导航 */
     .rule{ height:1px; background:var(--line); margin:18px 0 10px; }
     nav{
-      display:flex; justify-content:space-between; gap:10px;
-      padding:12px 0 16px;
+      display:flex; justify-content:space-between; gap:10px; padding:12px 0 16px;
     }
     nav a{
       flex:1; text-align:center; text-decoration:none; color:var(--fg);
@@ -77,49 +51,31 @@
     nav a:hover{ color:var(--accent) }
     nav a:hover::after{ opacity:1; transform:scaleX(1) }
 
-    /* 诗句（暂作留白区域，可按你的喜好再改） */
-    .motto{
-      text-align:center; margin:28px 0 0; line-height:1.9;
-      font-size:clamp(14px,2.8vw,18px); opacity:.92;
-    }
+    .motto{ text-align:center; margin:28px 0 0; line-height:1.9; font-size:clamp(14px,2.8vw,18px); opacity:.92; }
+    footer{ text-align:center; margin-top:26px; color:var(--muted); font-size:12px; letter-spacing:.12em; }
 
-    footer{
-      text-align:center; margin-top:26px; color:var(--muted);
-      font-size:12px; letter-spacing:.12em;
-    }
-
-    /* 小屏处理：LOGO上下堆叠 */
-    @media (max-width:720px){
-      .hero{ grid-template-columns:1fr; gap:34px; margin-top:2vh; }
-    }
+    @media (max-width:720px){ .hero{ grid-template-columns:1fr; gap:34px; margin-top:2vh; } }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <!-- 两侧 LOGO：左跳珠宝，右跳 EX -->
     <section class="hero" aria-label="品牌入口">
-      <a href="/jewel/" title="进入 · 珠宝">
-        <img src="/assets/logo-fancy.png" alt="FANCYVIP 珠宝标识">
-      </a>
-      <a href="/ex/" title="进入 · EX SYSTEM">
-        <img src="/assets/logo-ex.png" alt="EX SYSTEM 标识">
-      </a>
+      <!-- 注意这里用相对路径：assets/... -->
+      <a href="/jewel/" title="进入 · 珠宝"><img src="assets/logo-fancy.png" alt="FANCYVIP 珠宝标识"></a>
+      <a href="/ex/" title="进入 · EX SYSTEM"><img src="assets/logo-ex.png" alt="EX SYSTEM 标识"></a>
     </section>
-
-
 
     <div class="rule"></div>
     <nav aria-label="主导航">
-      <a href="/jewel/"   title="珠宝">珠宝</a>
-      <a href="/incense/" title="香经">香经</a>
-      <a href="/ex/"      title="EX">EX</a>
-      <a href="/poem/"    title="文馨">文馨</a>
-      <a href="/huashizhixin/" title="华世智鑫">华世智鑫</a>
+      <a href="/jewel/">珠宝</a>
+      <a href="/incense/">香经</a>
+      <a href="/ex/">EX</a>
+      <a href="/poem/">文馨</a>
+      <a href="/huashizhixin/">华世智鑫</a>
     </nav>
     <div class="rule"></div>
 
     <div class="motto">让智能有情，让商业有诗。</div>
-
     <footer>© 华世智鑫</footer>
   </main>
 </body>
