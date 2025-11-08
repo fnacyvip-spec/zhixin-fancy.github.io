@@ -1,35 +1,126 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>FANCY.VIP | 诗意商业的造梦所</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FANCY · VIP — 华世智鑫</title>
+  <meta name="description" content="FANCY · VIP｜华世智鑫：闻香、珠宝、诗词的东方极简美学，与智能文明的温度。">
   <style>
-    body {
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      font-family: "Cormorant Garamond", "宋体", serif;
-      text-align: center;
-      padding: 10% 5%;
-      line-height: 1.8;
+    :root{
+      --bg:#0c0c0c;
+      --fg:#f4f4f4;
+      --muted:#bdbdbd;
+      --line:#2a2a2a;
+      --accent:#d6c08f; /* 低饱和金色，用于hover点缀 */
     }
-    h1 { font-size: 2.5em; letter-spacing: 2px; }
-    p { font-size: 1.2em; opacity: 0.9; }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 30px;
-      border: 1px solid #f5f5f5;
-      color: #f5f5f5;
-      text-decoration: none;
-      transition: 0.3s;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: "Noto Serif SC","Songti SC","Source Han Serif SC","Times New Roman",serif;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      display:flex; align-items:center; justify-content:center;
     }
-    .btn:hover { background-color: #f5f5f5; color: #111; }
+    .wrap{
+      width:min(1000px,92vw);
+      padding:6vh 0 5vh;
+    }
+    /* 顶部 LOGO 区 */
+    .brand{
+      display:flex; align-items:center; justify-content:center;
+      gap:min(5vw,42px);
+      margin-bottom:28px;
+    }
+    .brand img{
+      height:64px; width:auto; display:block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.45));
+    }
+    .brand .fallback{
+      font-size:22px; letter-spacing:.15em; color:var(--muted);
+    }
+
+    /* 主副标题 */
+    h1{
+      text-align:center; margin:6px 0 6px;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing:.18em; font-weight:600;
+    }
+    h1 .dot{ padding:0 .15em }
+    .subtitle{
+      text-align:center; margin:2px 0 24px; color:var(--muted);
+      font-size: clamp(12px, 2.6vw, 16px); letter-spacing:.2em;
+    }
+
+    /* 导航 */
+    nav{
+      display:flex; align-items:center; justify-content:center;
+      gap: clamp(16px, 4.2vw, 40px);
+      padding:18px 0 26px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    }
+    nav a{
+      color:var(--fg); text-decoration:none;
+      font-size: clamp(14px, 2.8vw, 18px);
+      letter-spacing:.25em; padding:.2em .1em; position:relative;
+      transition: color .2s ease;
+    }
+    nav a::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:1px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity:0; transform:scaleX(.2); transition: all .25s ease;
+    }
+    nav a:hover{ color:var(--accent) }
+    nav a:hover::after{ opacity:1; transform:scaleX(1) }
+
+    /* 诗意引语 */
+    .motto{
+      margin:28px auto 0; text-align:center; line-height:1.9;
+      color:var(--fg); opacity:.92; font-size:clamp(14px,2.9vw,18px);
+    }
+
+    /* 页脚（可后续放社交/邮箱） */
+    footer{
+      text-align:center; margin-top:28px; color:var(--muted);
+      font-size:12px; letter-spacing:.12em;
+    }
+
+    /* 小屏优化 */
+    @media (max-width:520px){
+      .brand img{ height:56px }
+      .brand{ gap:22px }
+    }
   </style>
 </head>
 <body>
-  <h1>FANCY.VIP</h1>
-  <p>诗意，是商业的灵魂。<br>香，是灵魂的温度。<br><br>欢迎来到华智鑫的世界。</p>
-  <a href="mailto:hello@fancy.vip" class="btn">写信给我</a>
+  <main class="wrap">
+    <!-- 顶部 LOGO：若没有图片会显示 fallback 文本 -->
+    <div class="brand" aria-label="品牌标识">
+      <img src="./assets/logo-fancy.png" alt="FANCYVIP Jewel Mark" onerror="this.outerHTML='<div class=&quot;fallback&quot;>FANCYVIP</div>'">
+      <img src="./assets/logo-ex.png" alt="EX SYSTEM Mark" onerror="this.outerHTML='<div class=&quot;fallback&quot;>EX·SYSTEM</div>'">
+    </div>
+
+    <!-- 主/副标题 -->
+    <h1>FANCY<span class="dot">·</span>VIP</h1>
+    <div class="subtitle">华世智鑫</div>
+
+    <!-- 导航：先链接到锚点，后续你做成独立页面只需把 href 改成 /incense /jewel 等 -->
+    <nav>
+      <a href="#incense" title="闻香 · 香道">闻香</a>
+      <a href="#jewel"   title="珠宝 · 光与形">珠宝</a>
+      <a href="#poetry"  title="诗词 · 文心">诗词</a>
+      <a href="#about"   title="关于 · 华世智鑫">华世智鑫</a>
+    </nav>
+
+    <!-- 诗意引语（可替换） -->
+    <div class="motto">
+      诗意，是商业的灵魂；<br>
+      智能，是未来的温度。
+    </div>
+
+    <footer>
+      © FANCY · VIP — 华世智鑫
+    </footer>
+  </main>
 </body>
 </html>
