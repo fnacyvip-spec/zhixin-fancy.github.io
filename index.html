@@ -7,86 +7,93 @@
   <meta name="description" content="FANCY · VIP｜华世智鑫：珠宝、香经、EX、文馨与关于。东方极简与智能文明美学门户。">
   <style>
     :root{
-      /* 石墨银灰主题 */
-      --bg:#1a1a1a;      /* 背景色（更亮的黑，EX更立体） */
-      --fg:#efefef;      /* 正文 */
-      --muted:#bbbbbb;   /* 次级 */
-      --line:#2d2d2d;    /* 细线 */
-      --accent:#d8c693;  /* 低饱和金色 */
+      /* 象牙白主题 */
+      --bg:#f8f8f6;      /* 背景色：柔和象牙白 */
+      --fg:#1a1a1a;      /* 主文字：深灰黑 */
+      --muted:#555;      /* 次要文字 */
+      --line:#e2e2e0;    /* 分隔线 */
+      --accent:#b5a06a;  /* 雅金色调 */
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; background:var(--bg); color:var(--fg);
+      margin:0;
+      background:var(--bg); color:var(--fg);
       font-family:"Noto Serif SC","Songti SC","Source Han Serif SC","Times New Roman",serif;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
       display:flex; align-items:center; justify-content:center;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    .wrap{ width:min(1100px,92vw); padding:6vh 0 7vh; }
 
-    /* 顶部两枚LOGO */
+    .wrap{width:min(1100px,92vw); padding:6vh 0 7vh;}
+
+    /* LOGO区 */
     .hero{
       display:grid; grid-template-columns:1fr 1fr; gap:min(8vw,80px);
-      align-items:center; justify-items:center; margin:4vh 0 5vh;
+      align-items:center; justify-items:center;
+      margin:5vh 0 6vh;
     }
-    .hero a{ display:inline-block; }
+    .hero a{display:inline-block;}
     .hero img{
       width:min(300px,40vw); height:auto;
-      /* 普通柔光（左侧FANCY） */
       filter:
-        drop-shadow(0 6px 14px rgba(0,0,0,.45))
-        drop-shadow(0 0 12px rgba(255,255,255,.28));
-      transition: transform .25s ease, filter .25s ease;
-    }
-    /* 右侧 EX：专属提亮，让深灰线条更清晰 */
-    .hero a:nth-child(2) img{
-      filter:
-        drop-shadow(0 6px 14px rgba(0,0,0,.5))
-        drop-shadow(0 0 16px rgba(255,255,255,.35))
-        drop-shadow(0 0 8px rgba(80,180,255,.18)); /* 微蓝光，呼应 EX 蓝 */
+        drop-shadow(0 6px 14px rgba(0,0,0,.1))
+        drop-shadow(0 0 18px rgba(0,0,0,.05));
+      transition:transform .25s ease, filter .25s ease;
     }
     .hero a:hover img{
-      transform: translateY(-4px) scale(1.02);
+      transform:translateY(-3px) scale(1.02);
       filter:
-        drop-shadow(0 10px 18px rgba(0,0,0,.5))
-        drop-shadow(0 0 18px rgba(255,255,255,.4));
-    }
-    /* hover时 EX 也要叠加提亮 */
-    .hero a:nth-child(2):hover img{
-      filter:
-        drop-shadow(0 10px 18px rgba(0,0,0,.55))
-        drop-shadow(0 0 22px rgba(255,255,255,.45))
-        drop-shadow(0 0 10px rgba(80,180,255,.22));
+        drop-shadow(0 10px 22px rgba(0,0,0,.15))
+        drop-shadow(0 0 20px rgba(0,0,0,.1));
     }
 
-    .rule{ height:1px; background:var(--line); margin:18px 0 10px; }
+    /* 分隔线 */
+    .rule{height:1px; background:var(--line); margin:18px 0 10px;}
+
+    /* 导航 */
     nav{
       display:flex; justify-content:space-between; gap:10px; padding:12px 0 16px;
     }
     nav a{
-      flex:1; text-align:center; text-decoration:none; color:var(--fg);
-      letter-spacing:.3em; font-size:clamp(14px,2.6vw,18px);
-      padding:.5em 0; position:relative; transition:color .2s ease;
+      flex:1; text-align:center; text-decoration:none;
+      color:var(--fg); letter-spacing:.3em;
+      font-size:clamp(14px,2.6vw,18px);
+      padding:.5em 0; position:relative;
+      transition:color .2s ease;
     }
     nav a::after{
       content:""; position:absolute; left:10%; right:10%; bottom:-8px; height:1px;
       background:linear-gradient(90deg,transparent,var(--accent),transparent);
       opacity:0; transform:scaleX(.4); transition:all .25s ease;
     }
-    nav a:hover{ color:var(--accent) }
-    nav a:hover::after{ opacity:1; transform:scaleX(1) }
+    nav a:hover{color:var(--accent);}
+    nav a:hover::after{opacity:1; transform:scaleX(1);}
 
-    .motto{ text-align:center; margin:28px 0 0; line-height:1.9; font-size:clamp(14px,2.8vw,18px); opacity:.95; }
-    footer{ text-align:center; margin-top:26px; color:var(--muted); font-size:12px; letter-spacing:.12em; }
+    /* 底部诗句 */
+    .motto{
+      text-align:center; margin:36px 0 0;
+      font-size:clamp(15px,2.6vw,19px);
+      color:var(--muted);
+      letter-spacing:.05em;
+    }
 
-    @media (max-width:720px){ .hero{ grid-template-columns:1fr; gap:34px; margin-top:2vh; } }
+    footer{
+      text-align:center; margin-top:26px;
+      color:var(--muted); font-size:13px;
+      letter-spacing:.12em;
+    }
+
+    @media (max-width:720px){
+      .hero{grid-template-columns:1fr; gap:34px; margin-top:2vh;}
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="hero" aria-label="品牌入口">
       <a href="/jewel/" title="进入 · 珠宝"><img src="assets/logo-fancy.png" alt="FANCYVIP 珠宝标识"></a>
-      <a href="/ex/"    title="进入 · EX SYSTEM"><img src="assets/logo-ex.png"    alt="EX SYSTEM 标识"></a>
+      <a href="/ex/" title="进入 · EX SYSTEM"><img src="assets/logo-ex.png" alt="EX SYSTEM 标识"></a>
     </section>
 
     <div class="rule"></div>
@@ -99,7 +106,7 @@
     </nav>
     <div class="rule"></div>
 
-    <div class="motto">让智能有情 让商业有诗 </div>
+    <div class="motto">让智能有情  让商业有诗</div>
     <footer>© 华世智鑫</footer>
   </main>
 </body>
